@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tripster xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ta_tripster.xsd">
+   <user>
+      <login>Britney Spears</login>
+      <email>Britney Spears</email>
+      <name>Britney Spears</name>
+      <affiliation>entertainment</affiliation>
+      <interests>None</interests>
+      <friend>Jamie Lynn Spears</friend>
+      <trip>
+         <id>0</id>
+         <name>Trip</name>
+         <feature>None</feature>
+         <privacyFlag>public</privacyFlag>
+         <album>
+            <id>0</id>
+            <name>Trip1</name>
+            <privacyFlag>public</privacyFlag>
+         </album>
+      </trip>
+   </user>
+   <user>
+      <login>Jamie Lynn Spears</login>
+      <email>Jamie Lynn Spears</email>
+      <name>Jamie Lynn Spears</name>
+      <affiliation>entertainment</affiliation>
+      <interests>None</interests>
+   </user>
+   <user>
+      <login>Josh Rojas</login>
+      <email>Josh Rojas</email>
+      <name>Josh Rojas</name>
+      <affiliation>Penn</affiliation>
+      <interests>None</interests>
+      <friend>Lizzy Britton</friend>
+      <trip>
+         <id>1</id>
+         <name>Trip</name>
+         <feature>None</feature>
+         <privacyFlag>public</privacyFlag>
+         <album>
+            <id>1</id>
+            <name>Trip2</name>
+            <privacyFlag>public</privacyFlag>
+         </album>
+      </trip>
+      <trip>
+         <id>2</id>
+         <name>Trip</name>
+         <feature>None</feature>
+         <privacyFlag>public</privacyFlag>
+         <album>
+            <id>2</id>
+            <name>Trip3</name>
+            <privacyFlag>public</privacyFlag>
+         </album>
+      </trip>
+   </user>
+   <user>
+      <login>Hamza Qaiser</login>
+      <email>Hamza Qaiser</email>
+      <name>Hamza Qaiser</name>
+      <affiliation>Penn</affiliation>
+      <interests>None</interests>
+      <trip>
+         <id>4</id>
+         <name>Trip</name>
+         <feature>None</feature>
+         <privacyFlag>public</privacyFlag>
+         <album>
+            <id>4</id>
+            <name>Trip5</name>
+            <privacyFlag>public</privacyFlag>
+         </album>
+      </trip>
+   </user>
+   <user>
+      <login>Lizzy Britton</login>
+      <email>Lizzy Britton</email>
+      <name>Lizzy Britton</name>
+      <affiliation>Penn</affiliation>
+      <interests>None</interests>
+      <trip>
+         <id>3</id>
+         <name>Trip</name>
+         <feature>None</feature>
+         <privacyFlag>public</privacyFlag>
+         <album>
+            <id>3</id>
+            <name>Trip4</name>
+            <privacyFlag>public</privacyFlag>
+         </album>
+      </trip>
+   </user>
+</tripster>

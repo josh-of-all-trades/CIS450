@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tripster xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ta_tripster.xsd">
+    <operator></operator>
+    <web_url></web_url>
+    <user>
+    	<login></login>
+    	<email></email>
+    	<name></name>
+    	<affiliation></affiliation> <!-- optional -->
+    	<interests></interests>
+    	<friend></friend> <!-- multiple allowed -->
+    	<trip> <!-- multiple allowed -->
+    		<id></id>
+    		<name></name>
+    		<feature></feature>
+    		<privacyFlag></privacyFlag>
+    		<album>  <!-- multiple allowed -->
+    			<id></id>
+    			<name></name>
+    			<privacyFlag></privacyFlag>
+    			<content> <!-- multiple allowed -->
+    				<id></id>
+    				<source></source>
+    				<type></type>
+    				<url></url>
+    			</content>
+    		</album>
+    		<location> <!-- multiple allowed -->
+    			<name></name>
+    			<type></type>
+    		</location>
+    	</trip>
+   		<rateTrip> <!-- multiple allowed -->
+   			<tripid></tripid>
+   			<score></score>
+   			<comment></comment> <!-- multiple allowed -->
+   		</rateTrip>
+   		<rateContent> <!-- multiple allowed -->
+   			<contentid></contentid>
+   			<contentSource></contentSource>
+   			<score></score>
+   			<comment></comment> <!-- multiple allowed -->
+   		</rateContent>
+   		<request> <!-- multiple allowed -->
+   			<tripid></tripid>
+   			<status></status>
+   		</request>
+   		<invite> <!-- multiple allowed -->
+   			<tripid></tripid>
+   			<friendid></friendid>
+   			<status></status>
+   		</invite>
+   		<dream></dream> <!-- multiple allowed -->
+    </user>
+</tripster>
