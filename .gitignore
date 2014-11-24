@@ -3,3 +3,4 @@ ec2-api-tools-1.7.1.3/
 access.csv
 .metadata/
 .idea/
+test.*
