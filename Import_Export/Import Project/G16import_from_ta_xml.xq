@@ -39,15 +39,13 @@
      <in_list></in_list>
      
      <dreams>
-        {for $user at $pos in $root/user/login/text()
+        {for $user at $u_pos in $root/user/login/text()
          for $dream in $root/user[login/text() = $user]/dream/text()
+         for $loc at $l_pos in fn:distinct-values($root/user/trip/location/name/text())
+         where $loc = $dream
          return <tuple>
-            <dreamer>{$pos}</dreamer>
-            <location>
-            {for $loc at $pos in fn:distinct-values($root/user/trip/location/name/text())
-                return {if ($loc = $dream) then $pos else 1}
-            }
-            </location>
+            <dreamer>{$u_pos}</dreamer>
+            <location>{$l_pos}</location>
             <rank>1</rank>
             <dream_date>2014-11-24 05:21:12.0</dream_date>
          </tuple>
@@ -103,12 +101,14 @@
      </in_album>
      
      <participate_trip>
-        {for $user at $pos in $root/user/login/text()
+        {for $user at $u_pos in $root/user/login/text()
+         for $invittee at $i_pos in $root/user/login/text()
          for $invite in $root/user[login/text() = $user]/invite
+         where $invite/friendid/text() = $invittee
          return <tuple>
             <status>{$invite/status/text()}</status>
-            <inviter>{$pos}</inviter>
-            <invitee>{$invite/friendid/text()}</invitee>
+            <inviter>{$u_pos}</inviter>
+            <invitee>{$i_pos}</invitee>
             <trip>{$invite/tripid/text()}</trip>
          </tuple>
         }
@@ -139,6 +139,7 @@
         {for $user at $pos in $root/user/login/text()
          for $media in $root/user[login/text() = $user]/rateContent/contentid/text()
          for $comment in $root/user[login/text() = $user]/rateContent[contentid/text() = $media]/comment/text()
+         where $comment != 'NULL' and $comment != 'null'
          return <tuple>
             <media>{$media}</media>
             <commenter>{$pos}</commenter>
@@ -162,6 +163,7 @@
         {for $user at $pos in $root/user/login/text()
          for $trip in $root/user[login/text() = $user]/rateTrip/tripid/text()
          for $comment in $root/user[login/text() = $user]/rateTrip[tripid/text() = $trip]/comment/text()
+         where $comment != 'NULL' and $comment != 'null'
          return <tuple>
             <trip>{$trip}</trip>
             <commenter>{$pos}</commenter>
