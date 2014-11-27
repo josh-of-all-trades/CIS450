@@ -1,4 +1,4 @@
-{let $root := doc("../small_project_data.xml")/tripster
+{let $root := doc("../project_data.xml")/tripster
  return <database>
      <users>
         {for $user at $pos in $root/user
@@ -17,7 +17,6 @@
          return <tuple>
             <friend_1>{$pos1}</friend_1>
             <friend_2>{$pos2}</friend_2>
-            <friend_date>2014-11-24 05:21:12.0</friend_date>
          </tuple>
         }
      </friends>
@@ -47,7 +46,6 @@
             <dreamer>{$u_pos}</dreamer>
             <location>{$l_pos}</location>
             <rank>1</rank>
-            <dream_date>2014-11-24 05:21:12.0</dream_date>
          </tuple>
         }
      </dreams>
@@ -58,17 +56,16 @@
          return <tuple>
             <id>{$trip}</id>
             <owner>{$pos}</owner>
-            <start_date>2014-11-20 05:21:12.0</start_date>
-            <end_date>2014-11-24 05:21:12.0</end_date>
+
          </tuple> 
         }
      </trips>
      
      <albums>
-        {for $user at $pos in $root/user/login/text()
+        {for $user in $root/user/login/text()
          for $trip in $root/user[login/text() = $user]/trip
          for $id in fn:distinct-values($root/user/trip[id/text() = $trip/id/text()]/id/text())
-         for $album in $root/user/trip[text() = $trip]/album
+         for $album in $root/user/trip[text() = $trip/id/text()]/album
          return <tuple>
             <id>{$album/id/text()}</id>
             <trip>{$id}</trip>
@@ -86,7 +83,6 @@
             <owner>{$pos}</owner>
             <media_url>{$media/url/text()}</media_url>
             <is_video>{if ($media/type/text() = 'video') then 1 else 0}</is_video>
-            <upload_date>2014-11-24 05:21:12.0</upload_date>
          </tuple>
         }
      </media>
@@ -116,9 +112,9 @@
      
      <trip_to>
          {for $trip in $root/user/trip/id/text()
-          for $loc in $root/user/trip[id/text() = $trip]/location/name/text()
+          for $loc at $pos in $root/user/trip[id/text() = $trip]/location/name/text()
           return <tuple>
-            <location>{$loc}</location>
+            <location>{$pos}</location>
             <trip>{$trip}</trip>
          </tuple>
          }
